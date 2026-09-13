@@ -30,13 +30,17 @@ class Settings(BaseSettings):
     pinecone_index_name: str = Field(default="cloudops-agent", description="Pinecone Index Name")
     pinecone_cloud: str = Field(default="aws", description="Pinecone Cloud Provider (e.g. aws, gcp)")
     pinecone_region: str = Field(default="us-east-1", description="Pinecone Region")
-    pinecone_dimension: int = Field(default=1536, description="Pinecone Vector Dimension (e.g. 1536 for OpenAI embeddings)")
+    pinecone_dimension: int = Field(default=384, description="Pinecone Vector Dimension (e.g. 384 for MiniLM, 1536 for OpenAI)")
     pinecone_metric: str = Field(default="cosine", description="Pinecone Distance Metric (e.g. cosine, euclidean)")
+    pinecone_namespace: Optional[str] = Field(default=None, description="Pinecone Namespace")
 
     # ==============================================
     # LLM & Embedding Providers
     # ==============================================
     openai_api_key: str = Field(default="", description="OpenAI API Key")
+    huggingface_api_key: str = Field(default="", description="Hugging Face API Key / Token")
+    embedding_model: str = Field(default="sentence-transformers/all-MiniLM-L6-v2", description="Embedding Model Name")
+    embedding_dimension: int = Field(default=384, description="Embedding Vector Dimension")
 
     # ==============================================
     # Web Search & Tool Integrations

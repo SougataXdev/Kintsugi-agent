@@ -17,3 +17,5 @@ pinecone
 tavily-python
 pypdf
 python-docx
+langchain-huggingface
+sentence-transformers
