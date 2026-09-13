@@ -4,6 +4,7 @@ python-multipart
 jinja2
 python-dotenv
 pydantic
+pydantic-settings
 langchain
 langchain-core
 langchain-community
